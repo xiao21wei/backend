@@ -81,16 +81,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  # 默认
-        'NAME': 'semester',  # 连接的数据库
-        'HOST': '101.42.160.94',  # mysql的ip地址
-        'PORT': 3306,  # mysql的端口
-        'USER': 'root',  # mysql的用户名
-        'PASSWORD': 'LPW159357258lpw?!'  # mysql的密码
-    }
-}
+
 
 
 # Password validation
@@ -137,13 +128,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# 发送邮箱验证码
-EMAIL_HOST = "smtp.163.com"     # 服务器
-EMAIL_PORT = 25                 # 一般情况下都为25
-EMAIL_HOST_USER = "xiao21wei2022@163.com"     # 账号
-EMAIL_HOST_PASSWORD = "XRECLTVGMJSQGUUA"     # （上面保存的授权码）
-EMAIL_USE_TLS = False       # 一般都为False
-EMAIL_FROM = "xiao21wei2022@163.com"      # 邮箱来自
+
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_ALLOW_ALL = True
@@ -158,27 +143,5 @@ CORS_ALLOW_METHODS = (
 )
 CORS_ALLOW_HEADERS = '*'
 
-# # 腾讯云对象存储配置
-# logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-#
-# secret_id = 'AKIDa1DAwVpuy1rUt53oLejaEeqqeEbkfMq7'
-# secret_key = '6xay72Vq21qVzHNFuLdlgNq57zf7MNBk'
-# region = 'ap-beijing'
-# token = None
-# scheme = 'https'
-#
-# config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
-#
-# client = CosS3Client(config)
-#
-#
-# # 自定义
-# def upload(localFilePath, title):
-#     response = client.put_object(
-#         Bucket='mo-shu',# 替换为用户创建的存储桶名称
-#         Body=localFilePath,# 要存储的文件的本地地址
-#         Key='picture.jpg'+title,# 自定义上传文件的名称
-#         EnableMD5=False,
-#     )
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
